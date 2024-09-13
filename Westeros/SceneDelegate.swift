@@ -32,7 +32,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             selectedImage: UIImage(systemName: "house.fill"))  // SF Symbol
         
         let navigationController = UINavigationController(rootViewController: houseListViewController)
-        tabBarController.viewControllers = [navigationController]
+        let favouritesViewController = FavouriteHouseListViewController()
+        favouritesViewController.tabBarItem = UITabBarItem(
+            title: "Favourites",
+            image: UIImage(systemName: "star"), // SF Symbol
+            selectedImage: UIImage(systemName: "star.fill"))  // SF Symbol
+        let favouritesNavigationController = UINavigationController(rootViewController: favouritesViewController)
+        
+        tabBarController.viewControllers = [navigationController, favouritesViewController]
         
         // Asignamos el primer view controller
         window.rootViewController = tabBarController
