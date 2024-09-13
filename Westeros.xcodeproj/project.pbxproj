@@ -15,6 +15,11 @@
 		635333BA2C925303002621DB /* GOTCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635333B92C925303002621DB /* GOTCharacter.swift */; };
 		635333C22C9257D7002621DB /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635333C02C9257D7002621DB /* FirstViewController.swift */; };
 		635333C32C9257D7002621DB /* FirstViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 635333C12C9257D7002621DB /* FirstViewController.xib */; };
+		635333C62C935AA6002621DB /* HouseListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635333C42C935AA6002621DB /* HouseListViewController.swift */; };
+		635333C72C935AA6002621DB /* HouseListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 635333C52C935AA6002621DB /* HouseListViewController.xib */; };
+		635333CA2C935DA7002621DB /* HouseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635333C82C935DA7002621DB /* HouseTableViewCell.swift */; };
+		635333CB2C935DA7002621DB /* HouseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 635333C92C935DA7002621DB /* HouseTableViewCell.xib */; };
+		635333CE2C9363D2002621DB /* UIImageView+Remote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635333CD2C9363D2002621DB /* UIImageView+Remote.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +33,11 @@
 		635333B92C925303002621DB /* GOTCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GOTCharacter.swift; sourceTree = "<group>"; };
 		635333C02C9257D7002621DB /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		635333C12C9257D7002621DB /* FirstViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FirstViewController.xib; sourceTree = "<group>"; };
+		635333C42C935AA6002621DB /* HouseListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseListViewController.swift; sourceTree = "<group>"; };
+		635333C52C935AA6002621DB /* HouseListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HouseListViewController.xib; sourceTree = "<group>"; };
+		635333C82C935DA7002621DB /* HouseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseTableViewCell.swift; sourceTree = "<group>"; };
+		635333C92C935DA7002621DB /* HouseTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HouseTableViewCell.xib; sourceTree = "<group>"; };
+		635333CD2C9363D2002621DB /* UIImageView+Remote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Remote.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +70,7 @@
 		635333A02C924C81002621DB /* Westeros */ = {
 			isa = PBXGroup;
 			children = (
+				635333CC2C936386002621DB /* Extensions */,
 				635333BB2C9254BB002621DB /* Presentation */,
 				635333A12C924C81002621DB /* AppDelegate.swift */,
 				635333A32C924C81002621DB /* SceneDelegate.swift */,
@@ -93,6 +104,9 @@
 			isa = PBXGroup;
 			children = (
 				635333C12C9257D7002621DB /* FirstViewController.xib */,
+				635333C52C935AA6002621DB /* HouseListViewController.xib */,
+				635333C82C935DA7002621DB /* HouseTableViewCell.swift */,
+				635333C92C935DA7002621DB /* HouseTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -101,8 +115,17 @@
 			isa = PBXGroup;
 			children = (
 				635333C02C9257D7002621DB /* FirstViewController.swift */,
+				635333C42C935AA6002621DB /* HouseListViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		635333CC2C936386002621DB /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				635333CD2C9363D2002621DB /* UIImageView+Remote.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -164,8 +187,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				635333AB2C924C82002621DB /* Assets.xcassets in Resources */,
+				635333CB2C935DA7002621DB /* HouseTableViewCell.xib in Resources */,
 				635333AE2C924C82002621DB /* Base in Resources */,
 				635333C32C9257D7002621DB /* FirstViewController.xib in Resources */,
+				635333C72C935AA6002621DB /* HouseListViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -181,6 +206,9 @@
 				635333C22C9257D7002621DB /* FirstViewController.swift in Sources */,
 				635333A42C924C81002621DB /* SceneDelegate.swift in Sources */,
 				635333BA2C925303002621DB /* GOTCharacter.swift in Sources */,
+				635333CA2C935DA7002621DB /* HouseTableViewCell.swift in Sources */,
+				635333CE2C9363D2002621DB /* UIImageView+Remote.swift in Sources */,
+				635333C62C935AA6002621DB /* HouseListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

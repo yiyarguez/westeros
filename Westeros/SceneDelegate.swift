@@ -20,11 +20,22 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Creamos un objeto window
         let window = UIWindow(windowScene: scene)
         
-        // Instanciamos el primer view controller
-        let viewController = FirstViewController()
+        // Instanciamos un tab bar
+        let tabBarController = UITabBarController()
+        
+        // Instanciamos nuestra lista de casas
+        let houseListViewController = HouseListViewController()
+        
+        houseListViewController.tabBarItem = UITabBarItem(
+            title: "Houses",
+            image: UIImage(systemName: "house"), // SF Symbol
+            selectedImage: UIImage(systemName: "house.fill"))  // SF Symbol
+        
+        let navigationController = UINavigationController(rootViewController: houseListViewController)
+        tabBarController.viewControllers = [navigationController]
         
         // Asignamos el primer view controller
-        window.rootViewController = viewController
+        window.rootViewController = tabBarController
         window.makeKeyAndVisible()
         self.window = window 
     }
