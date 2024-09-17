@@ -26,6 +26,7 @@
 		635333D62C93DF02002621DB /* FavouriteHouseCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 635333D42C93DF02002621DB /* FavouriteHouseCollectionViewCell.xib */; };
 		6368E6222C990C60006D2D78 /* HouseDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6368E6212C990C60006D2D78 /* HouseDetailViewController.xib */; };
 		6368E6232C990C60006D2D78 /* HouseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6368E6202C990C60006D2D78 /* HouseDetailViewController.swift */; };
+		6368E6252C99F6F9006D2D78 /* Notification+Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6368E6242C99F6F9006D2D78 /* Notification+Name.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		635333D42C93DF02002621DB /* FavouriteHouseCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavouriteHouseCollectionViewCell.xib; sourceTree = "<group>"; };
 		6368E6202C990C60006D2D78 /* HouseDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseDetailViewController.swift; sourceTree = "<group>"; };
 		6368E6212C990C60006D2D78 /* HouseDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HouseDetailViewController.xib; sourceTree = "<group>"; };
+		6368E6242C99F6F9006D2D78 /* Notification+Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+Name.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				635333CD2C9363D2002621DB /* UIImageView+Remote.swift */,
+				6368E6242C99F6F9006D2D78 /* Notification+Name.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -227,6 +230,7 @@
 				635333A22C924C81002621DB /* AppDelegate.swift in Sources */,
 				635333B82C925219002621DB /* House.swift in Sources */,
 				635333C22C9257D7002621DB /* FirstViewController.swift in Sources */,
+				6368E6252C99F6F9006D2D78 /* Notification+Name.swift in Sources */,
 				635333A42C924C81002621DB /* SceneDelegate.swift in Sources */,
 				635333BA2C925303002621DB /* GOTCharacter.swift in Sources */,
 				635333CA2C935DA7002621DB /* HouseTableViewCell.swift in Sources */,

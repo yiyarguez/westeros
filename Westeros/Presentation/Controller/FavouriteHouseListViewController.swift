@@ -15,7 +15,7 @@ final class FavouriteHouseListViewController: UICollectionViewController {
     typealias Snapshot = NSDiffableDataSourceSnapshot<Int, House>
     
     // MARK: - Model
-    private let favouriteHouses = [House]()
+    private var favouriteHouses = [String: House]()
     private var dataSource: DataSource?
     
     // MARK: - Initializers
@@ -53,9 +53,37 @@ final class FavouriteHouseListViewController: UICollectionViewController {
         
         var snapshot = Snapshot()
         snapshot.appendSections([0])
-        snapshot.appendItems(favouriteHouses)
+        snapshot.appendItems(Array(favouriteHouses.values))
         
         dataSource?.apply(snapshot)
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(didReceive), // Aquí llegarán los eventos
+            name: .didToggleFavourite,
+            object: nil // debe ser nulo
+        )
+    }
+    
+    @objc // Es para decirle al compilador que se puede leer desde objective-c
+    func didReceive(_ notification: Notification) {
+        // Obtener la información de la notificación (evento)
+        guard let info = notification.userInfo,
+              let house = info["house"] as? House,
+        var snapshot = dataSource?.snapshot() else {
+            return
+        }
+        if let foundHouse = favouriteHouses[house.rawValue] {
+            favouriteHouses.removeValue(forKey: foundHouse.rawValue)
+            snapshot.deleteItems([foundHouse])
+        } else {
+            favouriteHouses[house.rawValue] = house
+            snapshot.appendItems([house])
+        }
+        
+        // Procesar la información
+        // Refrescar la vista
+        dataSource?.apply(snapshot, animatingDifferences: false)
+        
         
     }
 }

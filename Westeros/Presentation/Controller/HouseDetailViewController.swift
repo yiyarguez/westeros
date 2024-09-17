@@ -51,6 +51,8 @@ final class HouseDetailViewController: UIViewController {
     }
 }
 
+
+
 // MARK: - Configuración para mostrar image y label en la pantalla de detalles
 // TODO: - Investigar como funcionan las extensiones y para que sirven
 
@@ -92,6 +94,16 @@ private extension HouseDetailViewController {
         isFavourite.toggle()
         favouriteHouseDelegate?.didToggleFavourite(for: house)
         navigationItem.setRightBarButton(makeRightBarButtonItem(), animated: true)
+        
+        // TODO: - Investigar el NotificationCenter y su método post
+        // Nota: No tiene nada que ver con las notificaciones(baners) que nos muestran las aplicaciones por lo general.
+        // Está relacionado con el patrón OBSERVER
+        // Aquí estamos enviando la información
+        NotificationCenter.default.post(
+            name: .didToggleFavourite,
+            object: nil,
+            userInfo: ["house": house]
+        )
     }
     
     // Método para mostrar una estrella o la otra dependiendo de si es favorito o no
