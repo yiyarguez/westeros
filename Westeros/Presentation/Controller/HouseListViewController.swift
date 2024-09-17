@@ -78,11 +78,14 @@ extension HouseListViewController {
     
     // Con este método se nos va a notificar que la celda se ha seleccionado
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
     
         // Obtenemos el índice de la fila seleccionada por el usuario
         let house = houses[indexPath.row]
+        let foundHouse = favouriteHouses[house.rawValue]
+        let isFavourite = foundHouse != nil
         
-        let detailViewController = HouseDetailViewController(house: house)
+        let detailViewController = HouseDetailViewController(house: house, isFavourite: isFavourite)
         detailViewController.favouriteHouseDelegate = self
         
         // Navegar a la pantalla donde se va a mostrar el detalle de la fila seleccionada

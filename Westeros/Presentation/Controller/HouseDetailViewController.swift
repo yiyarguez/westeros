@@ -26,11 +26,15 @@ final class HouseDetailViewController: UIViewController {
     
     
     private let house: House
+    private var isFavourite: Bool
+    
     // TODO: - Investigar que es weak (sirve para gestionar la memoria)
     weak var favouriteHouseDelegate: FavouriteHouseDelegate?
     
-    init(house: House) {
+    init(house: House, isFavourite: Bool) {
         self.house = house
+        self.isFavourite = isFavourite
+        
         // TODO: - ¿Qué es nibName y bundle?
         super.init(nibName: nil, bundle: nil)
     }
@@ -66,14 +70,17 @@ private extension HouseDetailViewController {
     func configureNavigationItem() {
         
         // Componente que aparece en el navigation bar en la parte derecha
-        navigationItem.rightBarButtonItem = UIBarButtonItem(
-            image: UIImage(systemName: "star"),
+        navigationItem.rightBarButtonItem = makeRightBarButtonItem()
+    }
+    
+    func makeRightBarButtonItem() -> UIBarButtonItem {
+        UIBarButtonItem(
+            image: makeFavouriteStar(isFavourite: isFavourite),
             style: .plain,
             target: self, // self hace referencia a class HouseDetailViewController
             action: #selector(didTapFavouriteItem)
         )
     }
-    
     
     // TODO: - Investigar más sobre que es el sender
     // sender es el componente que ejecuta la acción
@@ -82,7 +89,14 @@ private extension HouseDetailViewController {
           // Le decimos al compilador que el método está disponible en objective-c
     
     func didTapFavouriteItem(_ sender:Any) {
+        isFavourite.toggle()
         favouriteHouseDelegate?.didToggleFavourite(for: house)
+        navigationItem.setRightBarButton(makeRightBarButtonItem(), animated: true)
+    }
+    
+    // Método para mostrar una estrella o la otra dependiendo de si es favorito o no
+    func makeFavouriteStar(isFavourite: Bool) -> UIImage? {
+        isFavourite ? UIImage(systemName: "star.fill") : UIImage(systemName: "star")
     }
 }
 
