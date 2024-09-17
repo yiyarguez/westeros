@@ -24,6 +24,8 @@
 		635333D22C93DAE8002621DB /* FavouriteHouseListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 635333D02C93DAE8002621DB /* FavouriteHouseListViewController.xib */; };
 		635333D52C93DF02002621DB /* FavouriteHouseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635333D32C93DF02002621DB /* FavouriteHouseCollectionViewCell.swift */; };
 		635333D62C93DF02002621DB /* FavouriteHouseCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 635333D42C93DF02002621DB /* FavouriteHouseCollectionViewCell.xib */; };
+		6368E6222C990C60006D2D78 /* HouseDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6368E6212C990C60006D2D78 /* HouseDetailViewController.xib */; };
+		6368E6232C990C60006D2D78 /* HouseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6368E6202C990C60006D2D78 /* HouseDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,8 @@
 		635333D02C93DAE8002621DB /* FavouriteHouseListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavouriteHouseListViewController.xib; sourceTree = "<group>"; };
 		635333D32C93DF02002621DB /* FavouriteHouseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteHouseCollectionViewCell.swift; sourceTree = "<group>"; };
 		635333D42C93DF02002621DB /* FavouriteHouseCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavouriteHouseCollectionViewCell.xib; sourceTree = "<group>"; };
+		6368E6202C990C60006D2D78 /* HouseDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseDetailViewController.swift; sourceTree = "<group>"; };
+		6368E6212C990C60006D2D78 /* HouseDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HouseDetailViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +122,7 @@
 				635333D02C93DAE8002621DB /* FavouriteHouseListViewController.xib */,
 				635333D32C93DF02002621DB /* FavouriteHouseCollectionViewCell.swift */,
 				635333D42C93DF02002621DB /* FavouriteHouseCollectionViewCell.xib */,
+				6368E6212C990C60006D2D78 /* HouseDetailViewController.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -128,6 +133,7 @@
 				635333C02C9257D7002621DB /* FirstViewController.swift */,
 				635333C42C935AA6002621DB /* HouseListViewController.swift */,
 				635333CF2C93DAE8002621DB /* FavouriteHouseListViewController.swift */,
+				6368E6202C990C60006D2D78 /* HouseDetailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -202,6 +208,7 @@
 				635333CB2C935DA7002621DB /* HouseTableViewCell.xib in Resources */,
 				635333AE2C924C82002621DB /* Base in Resources */,
 				635333D22C93DAE8002621DB /* FavouriteHouseListViewController.xib in Resources */,
+				6368E6222C990C60006D2D78 /* HouseDetailViewController.xib in Resources */,
 				635333C32C9257D7002621DB /* FirstViewController.xib in Resources */,
 				635333C72C935AA6002621DB /* HouseListViewController.xib in Resources */,
 				635333D62C93DF02002621DB /* FavouriteHouseCollectionViewCell.xib in Resources */,
@@ -225,6 +232,7 @@
 				635333CA2C935DA7002621DB /* HouseTableViewCell.swift in Sources */,
 				635333CE2C9363D2002621DB /* UIImageView+Remote.swift in Sources */,
 				635333C62C935AA6002621DB /* HouseListViewController.swift in Sources */,
+				6368E6232C990C60006D2D78 /* HouseDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
