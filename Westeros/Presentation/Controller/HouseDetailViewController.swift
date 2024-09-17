@@ -74,6 +74,7 @@ private extension HouseDetailViewController {
         )
     }
     
+    
     // TODO: - Investigar más sobre que es el sender
     // sender es el componente que ejecuta la acción
     

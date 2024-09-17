@@ -37,7 +37,7 @@ final class HouseListViewController: UITableViewController {
             forCellReuseIdentifier: HouseTableViewCell.identifier)
         
         // 2. Configurar el data source
-        dataSource = DataSource(tableView: tableView) {
+        dataSource = DataSource(tableView: tableView) { [weak self] // TODO: - Investigar que es weak self
             tableView, indexPath, house in
             
             // Obtenemos una celda reusable y la casteamos al tipo de celda que queremos representar
@@ -49,7 +49,9 @@ final class HouseListViewController: UITableViewController {
                 // Si no podemos desempaquetarla retornamos una celda en blanco
                 return UITableViewCell()
             }
-            cell.configure(with: house, isFavourite: false)
+            let foundHouse = self?.favouriteHouses[house.rawValue]
+            let isFavourite = foundHouse != nil
+            cell.configure(with: house, isFavourite: isFavourite)
             return cell
         }
         
@@ -90,8 +92,21 @@ extension HouseListViewController {
 
 extension HouseListViewController: FavouriteHouseDelegate {
     func didToggleFavourite(for house: House) {
-        print("\(house)")
+        
+        // Eliminamos la casa que nos pasan por parámetro del diccionario
+        if let foundHouse = favouriteHouses[house.rawValue] {
+            favouriteHouses.removeValue(forKey: foundHouse.rawValue)
+        } else {
+            // Añadir la casa que nos pasan por parámetro
+            favouriteHouses[house.rawValue] = house
+        }
+       // Desempaquetar un snapshot
+        guard var snapshot = dataSource?.snapshot() else {
+            return
+        }
+        // Configuraciones para refrescar la pantalla después de un cambio
+        // Refrescamos la celda cuyo modelo es house que nos pasan por parámetro
+        snapshot.reloadItems([house])
+        dataSource?.apply(snapshot, animatingDifferences: false)
     }
-    
-    
 }
