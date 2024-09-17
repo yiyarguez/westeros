@@ -66,9 +66,21 @@ final class HouseListViewController: UITableViewController {
 }
 
 
-
+// MARK: - Table View Delegate
 extension HouseListViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         100
+    }
+    
+    // Con este método se nos va a notificar que la celda se ha seleccionado
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    
+        // Obtenemos el índice de la fila seleccionada por el usuario
+        let house = houses[indexPath.row]
+        
+        let detailViewController = HouseDetailViewController(house: house)
+        
+        // Navegar a la pantalla donde se va a mostrar el detalle de la fila seleccionada
+        navigationController?.show(detailViewController, sender: self)
     }
 }
