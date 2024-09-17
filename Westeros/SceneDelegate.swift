@@ -39,7 +39,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             selectedImage: UIImage(systemName: "star.fill"))  // SF Symbol
         let favouritesNavigationController = UINavigationController(rootViewController: favouritesViewController)
         
-        tabBarController.viewControllers = [navigationController, favouritesViewController]
+        tabBarController.viewControllers = [navigationController, favouritesNavigationController]
         
         // Asignamos el primer view controller
         window.rootViewController = tabBarController

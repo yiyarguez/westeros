@@ -31,6 +31,7 @@ final class HouseDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
+        configureNavigationItem()
     }
 }
 
@@ -49,4 +50,26 @@ private extension HouseDetailViewController {
         // Si, si puedo desempaquetar la imageURL
         houseImageView.setImage(url: imageURL)
     }
+    
+    func configureNavigationItem() {
+        
+        // Componente que aparece en el navigation bar en la parte derecha
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            image: UIImage(systemName: "star"),
+            style: .plain,
+            target: self, // self hace referencia a class HouseDetailViewController
+            action: #selector(didTapFavouriteItem)
+        )
+    }
+    
+    // TODO: - Investigar más sobre que es el sender
+    // sender es el componente que ejecuta la acción
+    
+    @objc // Se tiene que marcar en swift para que pueda interacturar objective-c con swift
+          // Le decimos al compilador que el método está disponible en objective-c
+    
+    func didTapFavouriteItem(_ sender:Any) {
+        print("Favourite tapped ⭐️")
+    }
 }
+
