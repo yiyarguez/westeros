@@ -17,6 +17,7 @@ final class HouseListViewController: UITableViewController {
     
     // MARK: - Model
     private let houses: [House] = House.allCases
+    private var favouriteHouses: [String: House] = [:]
     
     // Al declarar una variable como nula el compilador infiere que su valor inicial es 'nil'
     private var dataSource: DataSource?
@@ -48,7 +49,7 @@ final class HouseListViewController: UITableViewController {
                 // Si no podemos desempaquetarla retornamos una celda en blanco
                 return UITableViewCell()
             }
-            cell.configure(with: house)
+            cell.configure(with: house, isFavourite: false)
             return cell
         }
         
@@ -56,6 +57,7 @@ final class HouseListViewController: UITableViewController {
         tableView.dataSource = dataSource
         
         // 4. Crear un snapshot con los objetos a representar
+        // TODO: - Investigar que es un snapshot
         var snapshot = Snapshot()
         snapshot.appendSections([0])
         snapshot.appendItems(houses)
@@ -79,8 +81,17 @@ extension HouseListViewController {
         let house = houses[indexPath.row]
         
         let detailViewController = HouseDetailViewController(house: house)
+        detailViewController.favouriteHouseDelegate = self
         
         // Navegar a la pantalla donde se va a mostrar el detalle de la fila seleccionada
         navigationController?.show(detailViewController, sender: self)
     }
+}
+
+extension HouseListViewController: FavouriteHouseDelegate {
+    func didToggleFavourite(for house: House) {
+        print("\(house)")
+    }
+    
+    
 }

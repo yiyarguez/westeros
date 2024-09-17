@@ -7,6 +7,16 @@
 
 import UIKit
 
+
+// TODO: - Investigar que es AnyObject
+// AnyObject lo usamos para decirle al complilador que este protocol solo lo pueden usar reference types
+// no value types - es decir con una struct no se podría
+protocol FavouriteHouseDelegate: AnyObject {
+    
+    func didToggleFavourite(for house: House)
+    
+}
+
 final class HouseDetailViewController: UIViewController {
     @IBOutlet weak var houseImageView: UIImageView!
     @IBOutlet weak var houseNameLabel: UILabel!
@@ -16,6 +26,8 @@ final class HouseDetailViewController: UIViewController {
     
     
     private let house: House
+    // TODO: - Investigar que es weak (sirve para gestionar la memoria)
+    weak var favouriteHouseDelegate: FavouriteHouseDelegate?
     
     init(house: House) {
         self.house = house
@@ -69,7 +81,7 @@ private extension HouseDetailViewController {
           // Le decimos al compilador que el método está disponible en objective-c
     
     func didTapFavouriteItem(_ sender:Any) {
-        print("Favourite tapped ⭐️")
+        favouriteHouseDelegate?.didToggleFavourite(for: house)
     }
 }
 
