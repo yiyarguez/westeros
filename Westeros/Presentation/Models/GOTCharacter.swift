@@ -7,10 +7,11 @@
 
 import Foundation
 
-struct GOTCharacter {
+struct GOTCharacter: Codable {
     let fullname: String
     let title: String
     let family: String
 }
 
+// 
 

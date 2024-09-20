@@ -66,6 +66,13 @@ final class HouseListViewController: UITableViewController {
         
         // 5. Aplicar el snapshot al data source para añadir los objetos
         dataSource?.apply(snapshot)
+        
+        // TODO: - Investigar porque no está imprimiento el array en la consola
+        // Parte de código de la implementación de petición al servidor
+        NetworkModel.shared.getAllCharacters { characters, error in
+        print(characters)
+        print(error)
+        }
     }
 }
 
